@@ -1,25 +1,206 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35327.3
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndicadorDeJogos", "IndicadorDeJogos.csproj", "{18E446F9-7C83-415B-8F50-528E209C6043}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{18E446F9-7C83-415B-8F50-528E209C6043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18E446F9-7C83-415B-8F50-528E209C6043}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18E446F9-7C83-415B-8F50-528E209C6043}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18E446F9-7C83-415B-8F50-528E209C6043}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C36D66B6-BE18-4566-AD5D-C09123652474}
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IndicadorDeJogos {
+    internal class Program {
+        static void Main(string[] args) {
+
+            int opcao;
+            int idade;
+
+            Console.WriteLine("Escolha uma categoria: \n");
+            Console.WriteLine("1 - aventura");
+            Console.WriteLine("2 - Corrida");
+            Console.WriteLine("3 - Terror");
+            Console.WriteLine("4 - Ação");
+            Console.WriteLine("5 - Esportes");
+            int OpcaoCategoria = Convert.ToInt32(Console.ReadKey(true).KeyChar.ToString());
+
+
+
+            switch (OpcaoCategoria) {
+
+                case 1:
+                    Console.WriteLine("Selecione uma opção: \n");
+                    Console.WriteLine("1 - Assassins Creed");
+                    Console.WriteLine("2 - Shadow The Tomb Raider");
+                    Console.WriteLine("3 - Stars Wars Outlaws");
+                    Console.WriteLine("4 - Baldurs Gate");
+                    Console.WriteLine("5 - Monster Hunt World");
+                    opcao = Convert.ToInt32(Console.ReadLine());
+
+                    switch (opcao) {
+                        case 1:
+                            Console.WriteLine("Você selecionou Assassins Creed");
+                            break;
+                        case 2:
+                            Console.WriteLine("Você selecionou Shadow The Tomb Raider");
+                            break;
+                        case 3:
+                            Console.WriteLine("Você selecionou Star Wars Outlaws");
+                            break;
+                        case 4:
+                            Console.WriteLine("Você selecionou Baldurs Gate");
+                            break;
+                        case 5:
+                            Console.WriteLine("Você selecionou Monster Hunt World");
+                            break;
+                        default:
+                            Console.WriteLine("Opção invalida");
+                            break;
+                    }
+                    break;
+
+                case 2:
+                    Console.WriteLine("Selecione uma opção: \n");
+                    Console.WriteLine("1 - Forza Horizon");
+                    Console.WriteLine("2 - Gran Turismo");
+                    Console.WriteLine("3 - F1 24");
+                    Console.WriteLine("4 - NFS Unbound");
+                    Console.WriteLine("5 - The Crew");
+                    opcao = Convert.ToInt32(Console.ReadLine());
+
+                    switch (opcao) {
+                        case 1:
+                            Console.WriteLine("Você selecionou Forza Horzon");
+                            break;
+                        case 2:
+                            Console.WriteLine("Você selecionou Gran Turismo");
+                            break;
+                        case 3:
+                            Console.WriteLine("Você selecionou F1 24");
+                            break;
+                        case 4:
+                            Console.WriteLine("Você selecionou NFS Unbound");
+                            break;
+                        case 5:
+                            Console.WriteLine("Você selecionou The Crew");
+                            break;
+                        default:
+                            Console.WriteLine("Opção invalida");
+                            break;
+                    }
+                    break;
+
+                case 3:
+
+                    Console.WriteLine("Para acessar essa categoria deve possuir 18 anos ou mais ");
+                    Console.WriteLine("Qual a sua idade: ");
+                    idade = Convert.ToInt32(Console.ReadLine());
+                    if (idade >= 18) {
+
+                        Console.WriteLine("Selecione uma opção: \n");
+                        Console.WriteLine("1 - Resident Evil");
+                        Console.WriteLine("2 - Silent Hill");
+                        Console.WriteLine("3 - Alone In The Dark");
+                        Console.WriteLine("4 - The Forest");
+                        Console.WriteLine("5 - The Evil Whitin");
+                        opcao = Convert.ToInt32(Console.ReadKey(true).KeyChar.ToString());
+
+                        switch (opcao) {
+                            case 1:
+                                Console.WriteLine("Você selecionou Resident Evil");
+                                break;
+                            case 2:
+                                Console.WriteLine("Você selecionou Silent Hill");
+                                break;
+                            case 3:
+                                Console.WriteLine("Você selecionou Alone in The Dark");
+                                break;
+                            case 4:
+                                Console.WriteLine("Você selecionou The Forest");
+                                break;
+                            case 5:
+                                Console.WriteLine("Você selecionou The Evil Within");
+                                break;
+                            default:
+                                Console.WriteLine("Opção invalida");
+                                break;
+                        }
+                    }
+                    break;
+
+                case 4:
+
+                    Console.WriteLine("Para acessar essa categoria deve possuir 18 anos ou mais ");
+                    Console.WriteLine("Qual a sua idade: ");
+                    idade = Convert.ToInt32(Console.ReadLine());
+
+                    if (idade >= 18) {
+
+                        Console.WriteLine("Selecione uma opção: \n");
+                        Console.WriteLine("1 - Call Of Duty");
+                        Console.WriteLine("2 - Medal Of Honor");
+                        Console.WriteLine("3 - Black");
+                        Console.WriteLine("4 - Rainbow Six Siege");
+                        Console.WriteLine("5 - Far Cry");
+                        opcao = Convert.ToInt32(Console.ReadLine());
+
+                        switch (opcao) {
+                            case 1:
+                                Console.WriteLine("Você selecionou Call Of Duty");
+                                break;
+                            case 2:
+                                Console.WriteLine("Você selecionou Medal Of Honor");
+                                break;
+                            case 3:
+                                Console.WriteLine("Você selecionou Black");
+                                break;
+                            case 4:
+                                Console.WriteLine("Você selecionou Rainbow Six Siege");
+                                break;
+                            case 5:
+                                Console.WriteLine("Você selecionou Far Cry");
+                                break;
+                            default:
+                                Console.WriteLine("Opção invalida");
+                                break;
+                        }
+                    }
+                    break;
+
+                case 5:
+                    Console.WriteLine("Selecione uma opção: \n");
+                    Console.WriteLine("1 - EFootball");
+                    Console.WriteLine("2 - EA FC 24");
+                    Console.WriteLine("3 - NBA 2K25");
+                    Console.WriteLine("4 - Madden 25");
+                    Console.WriteLine("5 - WWE 2K25");
+                    opcao = Convert.ToInt32(Console.ReadLine());
+
+                    switch (opcao) {
+                        case 1:
+                            Console.WriteLine("Você selecionou Efootball");
+                            break;
+                        case 2:
+                            Console.WriteLine("Você selecionou EA FC 24");
+                            break;
+                        case 3:
+                            Console.WriteLine("Você selecionou NBA 2K25");
+                            break;
+                        case 4:
+                            Console.WriteLine("Você selecionou Madden 25");
+                            break;
+                        case 5:
+                            Console.WriteLine("Você selecionou WWE 2K25");
+                            break;
+                        default:
+                            Console.WriteLine("Opção invalida");
+                            break;
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Opção invalida");
+                    break;
+            }
+
+            Console.WriteLine("\nPressione uma tecla para finalizar");
+            Console.ReadKey();
+        }
+    }
+}
