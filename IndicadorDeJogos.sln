@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +10,8 @@ namespace IndicadorDeJogos {
     internal class Program {
         static void Main(string[] args) {
 
+            DateTime DataAtual = DateTime.Now;
+            DateTime DataNascimento;
             int opcao;
             int idade;
 
@@ -21,11 +24,10 @@ namespace IndicadorDeJogos {
             int OpcaoCategoria = Convert.ToInt32(Console.ReadKey(true).KeyChar.ToString());
 
 
-
             switch (OpcaoCategoria) {
 
                 case 1:
-                    Console.WriteLine("Selecione uma opção: \n");
+                    Console.WriteLine("\nSelecione uma opção: \n");
                     Console.WriteLine("1 - Assassins Creed");
                     Console.WriteLine("2 - Shadow The Tomb Raider");
                     Console.WriteLine("3 - Stars Wars Outlaws");
@@ -53,10 +55,10 @@ namespace IndicadorDeJogos {
                             Console.WriteLine("Opção invalida");
                             break;
                     }
-                    break;
+                break;
 
                 case 2:
-                    Console.WriteLine("Selecione uma opção: \n");
+                    Console.WriteLine("\nSelecione uma opção: \n");
                     Console.WriteLine("1 - Forza Horizon");
                     Console.WriteLine("2 - Gran Turismo");
                     Console.WriteLine("3 - F1 24");
@@ -67,33 +69,41 @@ namespace IndicadorDeJogos {
                     switch (opcao) {
                         case 1:
                             Console.WriteLine("Você selecionou Forza Horzon");
-                            break;
+                        break;
                         case 2:
                             Console.WriteLine("Você selecionou Gran Turismo");
-                            break;
+                        break;
                         case 3:
                             Console.WriteLine("Você selecionou F1 24");
-                            break;
+                        break;
                         case 4:
                             Console.WriteLine("Você selecionou NFS Unbound");
-                            break;
+                        break;
                         case 5:
                             Console.WriteLine("Você selecionou The Crew");
-                            break;
+                        break;
                         default:
                             Console.WriteLine("Opção invalida");
-                            break;
+                        break;
                     }
-                    break;
+                break;
 
                 case 3:
 
                     Console.WriteLine("Para acessar essa categoria deve possuir 18 anos ou mais ");
-                    Console.WriteLine("Qual a sua idade: ");
-                    idade = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Confirme a data de nascimneto ");
+                    DataNascimento = Convert.ToDateTime(Console.ReadLine());
+                    idade = Convert.ToInt32(DataAtual.Year - DataNascimento.Year);
+
+                    if (DataAtual.Month < DataNascimento.Month ||
+                       (DataAtual.Month == DataNascimento.Month && DataAtual.Day < DataNascimento.Day)) {
+                        
+                        idade--;
+                    }
+
                     if (idade >= 18) {
 
-                        Console.WriteLine("Selecione uma opção: \n");
+                        Console.WriteLine("\nSelecione uma opção: \n");
                         Console.WriteLine("1 - Resident Evil");
                         Console.WriteLine("2 - Silent Hill");
                         Console.WriteLine("3 - Alone In The Dark");
@@ -104,35 +114,44 @@ namespace IndicadorDeJogos {
                         switch (opcao) {
                             case 1:
                                 Console.WriteLine("Você selecionou Resident Evil");
-                                break;
+                            break;
                             case 2:
                                 Console.WriteLine("Você selecionou Silent Hill");
-                                break;
+                            break;
                             case 3:
                                 Console.WriteLine("Você selecionou Alone in The Dark");
-                                break;
+                            break;
                             case 4:
                                 Console.WriteLine("Você selecionou The Forest");
-                                break;
+                            break;
                             case 5:
                                 Console.WriteLine("Você selecionou The Evil Within");
-                                break;
+                            break;
                             default:
                                 Console.WriteLine("Opção invalida");
-                                break;
+                            break;
                         }
+                    } else {
+                        Console.WriteLine("Categoria indisponivel para menores de 18 anos!");
                     }
-                    break;
+                break;
 
                 case 4:
 
                     Console.WriteLine("Para acessar essa categoria deve possuir 18 anos ou mais ");
-                    Console.WriteLine("Qual a sua idade: ");
-                    idade = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Confirme a data de nascimneto ");
+                    DataNascimento = Convert.ToDateTime(Console.ReadLine());
+                    idade = Convert.ToInt32(DataAtual.Year - DataNascimento.Year);
+
+                    if (DataAtual.Month < DataNascimento.Month ||
+                       (DataAtual.Month == DataNascimento.Month && DataAtual.Day < DataNascimento.Day)) {
+
+                        idade--;
+                    }
 
                     if (idade >= 18) {
 
-                        Console.WriteLine("Selecione uma opção: \n");
+                        Console.WriteLine("\nSelecione uma opção: \n");
                         Console.WriteLine("1 - Call Of Duty");
                         Console.WriteLine("2 - Medal Of Honor");
                         Console.WriteLine("3 - Black");
@@ -143,28 +162,28 @@ namespace IndicadorDeJogos {
                         switch (opcao) {
                             case 1:
                                 Console.WriteLine("Você selecionou Call Of Duty");
-                                break;
+                            break;
                             case 2:
                                 Console.WriteLine("Você selecionou Medal Of Honor");
-                                break;
+                            break;
                             case 3:
                                 Console.WriteLine("Você selecionou Black");
-                                break;
+                            break;
                             case 4:
                                 Console.WriteLine("Você selecionou Rainbow Six Siege");
-                                break;
+                            break;
                             case 5:
                                 Console.WriteLine("Você selecionou Far Cry");
-                                break;
+                            break;
                             default:
                                 Console.WriteLine("Opção invalida");
-                                break;
+                            break;
                         }
                     }
-                    break;
+                break;
 
                 case 5:
-                    Console.WriteLine("Selecione uma opção: \n");
+                    Console.WriteLine("\nSelecione uma opção: \n");
                     Console.WriteLine("1 - EFootball");
                     Console.WriteLine("2 - EA FC 24");
                     Console.WriteLine("3 - NBA 2K25");
@@ -175,28 +194,28 @@ namespace IndicadorDeJogos {
                     switch (opcao) {
                         case 1:
                             Console.WriteLine("Você selecionou Efootball");
-                            break;
+                        break;
                         case 2:
                             Console.WriteLine("Você selecionou EA FC 24");
-                            break;
+                        break;
                         case 3:
                             Console.WriteLine("Você selecionou NBA 2K25");
-                            break;
+                        break;
                         case 4:
                             Console.WriteLine("Você selecionou Madden 25");
-                            break;
+                        break;
                         case 5:
                             Console.WriteLine("Você selecionou WWE 2K25");
-                            break;
+                        break;
                         default:
                             Console.WriteLine("Opção invalida");
-                            break;
+                        break;
                     }
-                    break;
+                break;
 
                 default:
                     Console.WriteLine("Opção invalida");
-                    break;
+                break;
             }
 
             Console.WriteLine("\nPressione uma tecla para finalizar");
